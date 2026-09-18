@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio - Fadhlan Ilhami</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              darkBg: "#090d16",
+              cardBg: "#111827",
+              accent: "#6366f1",
+              accentHover: "#4f46e5",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white"
+  >
+    <!-- Navbar / Tombol Kembali -->
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-darkBg/85 backdrop-blur-md border-b border-slate-800/80"
+    >
+      <div
+        class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between"
+      >
+        <a
+          href="index.html"
+          class="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm font-medium group"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 transform group-hover:-translate-x-1 transition-transform"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
+          </svg>
+          Kembali ke Beranda
+        </a>
+        <span
+          class="text-xs font-bold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full border border-indigo-500/20"
+          >Fadhlan.dev</span
+        >
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      class="pt-36 pb-20 px-6 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12"
+    >
+      <div class="relative group">
+        <div
+          class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl blur opacity-30 group-hover:opacity-75 transition duration-500"
+        ></div>
+        <div
+          class="relative w-52 h-52 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-indigo-500/40 shadow-2xl shrink-0 bg-slate-900"
+        >
+          <!-- Gunakan foto Anda -->
+          <img
+            src="assets/fadlan.png"
+            alt="Fadhlan Ilhami"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+      <div class="text-center md:text-left space-y-4">
+        <div
+          class="inline-flex items-center gap-2 px-3 py-1 bg-indigo-500/10 text-indigo-400 rounded-full text-xs font-semibold tracking-wider uppercase border border-indigo-500/20"
+        >
+          <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+          UI/UX Designer & Frontend Developer
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">
+          Fadhlan Ilhami
+        </h1>
+        <p class="text-slate-400 text-base leading-relaxed max-w-xl">
+          Seorang kreator digital yang berfokus pada perancangan antarmuka
+          elegan, sistem desain yang terstruktur, dan pengalaman web yang
+          interaktif serta responsif.
+        </p>
+        <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-4">
+          <a
+            href="#projects"
+            class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-xl transition-all shadow-lg shadow-indigo-600/25"
+            >Lihat Proyek</a
+          >
+          <a
+            href="#contact"
+            class="px-6 py-3 bg-cardBg hover:bg-slate-800 text-slate-300 font-medium rounded-xl border border-slate-800 hover:border-slate-700 transition-all"
+            >Hubungi Saya</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-10 border-y border-slate-800/60 bg-slate-900/30">
+      <div
+        class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 gap-6 text-center"
+      >
+        <div class="p-4">
+          <h3 class="text-3xl font-extrabold text-indigo-400">2+</h3>
+          <p class="text-slate-400 text-sm mt-1">Tahun Pengalaman</p>
+        </div>
+        <div class="p-4">
+          <h3 class="text-3xl font-extrabold text-indigo-400">15+</h3>
+          <p class="text-slate-400 text-sm mt-1">Proyek Selesai</p>
+        </div>
+        <div class="col-span-2 md:col-span-1 p-4">
+          <h3 class="text-3xl font-extrabold text-indigo-400">100%</h3>
+          <p class="text-slate-400 text-sm mt-1">Kepuasan Klien</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 px-6 max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">
+          Keahlian & Teknologi
+        </h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Alat dan bahasa pemrograman yang biasa digunakan sehari-hari
+        </p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div
+          class="p-6 bg-cardBg rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition-all group"
+        >
+          <div
+            class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4 group-hover:scale-110 transition-transform font-bold"
+          >
+            UI
+          </div>
+          <h3 class="font-semibold text-white text-base">UI/UX Design</h3>
+          <p class="text-xs text-slate-400 mt-2">
+            Figma, Wireframing, Prototyping, User Research
+          </p>
+        </div>
+        <div
+          class="p-6 bg-cardBg rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition-all group"
+        >
+          <div
+            class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4 group-hover:scale-110 transition-transform font-bold"
+          >
+            FE
+          </div>
+          <h3 class="font-semibold text-white text-base">Frontend</h3>
+          <p class="text-xs text-slate-400 mt-2">
+            HTML5, CSS3, JavaScript (ES6+), Tailwind CSS
+          </p>
+        </div>
+        <div
+          class="p-6 bg-cardBg rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition-all group"
+        >
+          <div
+            class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4 group-hover:scale-110 transition-transform font-bold"
+          >
+            VC
+          </div>
+          <h3 class="font-semibold text-white text-base">Version Control</h3>
+          <p class="text-xs text-slate-400 mt-2">
+            Git, GitHub, Collaborative Workflow
+          </p>
+        </div>
+        <div
+          class="p-6 bg-cardBg rounded-2xl border border-slate-800 hover:border-indigo-500/50 transition-all group"
+        >
+          <div
+            class="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4 group-hover:scale-110 transition-transform font-bold"
+          >
+            TO
+          </div>
+          <h3 class="font-semibold text-white text-base">Tools & Others</h3>
+          <p class="text-xs text-slate-400 mt-2">
+            VS Code, Vite, Responsive Web Design
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section
+      id="projects"
+      class="py-20 px-6 max-w-5xl mx-auto border-t border-slate-900"
+    >
+      <div class="text-center mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">
+          Proyek Pilihan
+        </h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Beberapa karya dan implementasi web yang pernah dibuat
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div
+          class="bg-cardBg rounded-2xl overflow-hidden border border-slate-800 hover:border-indigo-500/50 transition-all flex flex-col"
+        >
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <span
+                class="text-xs font-semibold text-indigo-400 uppercase tracking-wider"
+                >Web App UI</span
+              >
+              <h3 class="text-xl font-bold mt-1 text-white">
+                Dashboard Portofolio Multipage
+              </h3>
+              <p class="text-slate-400 text-sm mt-2">
+                Sistem navigasi portofolio developer terpusat dengan transisi
+                halaman yang mulus dan desain modular.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span
+                class="px-2.5 py-1 bg-slate-900 text-slate-300 rounded-md text-xs border border-slate-800"
+                >Tailwind CSS</span
+              >
+              <span
+                class="px-2.5 py-1 bg-slate-900 text-slate-300 rounded-md text-xs border border-slate-800"
+                >HTML5</span
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-cardBg rounded-2xl overflow-hidden border border-slate-800 hover:border-indigo-500/50 transition-all flex flex-col"
+        >
+          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+            <div>
+              <span
+                class="text-xs font-semibold text-indigo-400 uppercase tracking-wider"
+                >Design System</span
+              >
+              <h3 class="text-xl font-bold mt-1 text-white">
+                Modern SaaS Landing Page
+              </h3>
+              <p class="text-slate-400 text-sm mt-2">
+                Perancangan antarmuka landing page produk digital dengan fokus
+                pada konversi pengguna dan aksesibilitas warna.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span
+                class="px-2.5 py-1 bg-slate-900 text-slate-300 rounded-md text-xs border border-slate-800"
+                >Figma</span
+              >
+              <span
+                class="px-2.5 py-1 bg-slate-900 text-slate-300 rounded-md text-xs border border-slate-800"
+                >UI/UX</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer
+      id="contact"
+      class="py-16 border-t border-slate-800 bg-slate-900/20 text-center"
+    >
+      <div class="max-w-5xl mx-auto px-6 space-y-4">
+        <h3 class="text-xl font-bold text-white">Tertarik Berkolaborasi?</h3>
+        <p class="text-slate-400 text-sm max-w-md mx-auto">
+          Mari terhubung untuk mendiskusikan proyek atau peluang kerjasama
+          menarik lainnya.
+        </p>
+        <div class="pt-2">
+          <a
+            href="mailto:fadhlan@example.com"
+            class="inline-block px-8 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-medium rounded-xl transition-all shadow-lg shadow-indigo-600/25"
+            >Kirim Pesan</a
+          >
+        </div>
+        <p class="text-xs text-slate-600 pt-8">
+          &copy; 2026 Fadhlan Ilhami. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
