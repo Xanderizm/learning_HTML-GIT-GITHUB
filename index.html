@@ -1,39 +1,223 @@
 <!doctype html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pilih Portofolio Developer</title>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body
-    class="bg-slate-950 text-slate-100 font-sans min-h-screen flex flex-col items-center justify-center p-6"
-  >
-    <div class="text-center space-y-8 max-w-xl">
-      <h1 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-200">
-        Pilih Portofolio Developer
-      </h1>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bg: "#0a0612",
+              panel: "#150c24",
+              panelBorder: "#2a1c42",
+              accent: "#c084fc",
+              accent2: "#f472b6",
+              muted: "#a99bc4",
+            },
+            fontFamily: {
+              display: ["Syne", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      @keyframes floaty {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-14px);
+        }
+      }
+      .float-el {
+        animation: floaty 6s ease-in-out infinite;
+      }
+      .vertical-text {
+        writing-mode: vertical-rl;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .float-el {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-bg text-white font-body antialiased overflow-x-hidden">
+    <!-- Ambient background glow -->
+    <div class="fixed inset-0 pointer-events-none">
       <div
-        class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
+        class="absolute top-[-10%] left-[15%] w-[420px] h-[420px] bg-accent/25 rounded-full blur-[120px]"
+      ></div>
+      <div
+        class="absolute bottom-[-15%] right-[10%] w-[460px] h-[460px] bg-accent2/20 rounded-full blur-[130px]"
+      ></div>
+      <div
+        class="absolute top-[35%] right-[30%] w-[300px] h-[300px] bg-orange-400/10 rounded-full blur-[110px]"
+      ></div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full z-50">
+      <div
+        class="max-w-6xl mx-auto px-6 md:px-10 h-20 flex items-center justify-between"
       >
-        <!-- Tombol ke Portofolio Fadhlan (Ukuran disamakan w-64 text-center) -->
+        <span class="font-display font-bold text-lg tracking-tight"
+          >dev.folio</span
+        >
+
+        <nav
+          class="hidden md:flex items-center gap-8 text-sm text-muted font-medium"
+        >
+          <a href="#top" class="hover:text-white transition-colors">Beranda</a>
+          <a href="#pilih" class="hover:text-white transition-colors"
+            >Portofolio</a
+          >
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener"
+            class="hover:text-white transition-colors"
+            >GitHub</a
+          >
+        </nav>
+
+        <div
+          class="hidden sm:flex items-center gap-1 bg-panel/70 backdrop-blur-md border border-panelBorder rounded-full p-1"
+        >
+          <a
+            href="fadhlan.html"
+            target="_self"
+            class="px-4 py-2 text-xs font-semibold rounded-full text-muted hover:text-white transition-colors"
+            >Fadhlan</a
+          >
+          <a
+            href="fatah.html"
+            class="px-4 py-2 text-xs font-semibold rounded-full bg-gradient-to-r from-accent to-accent2 text-black"
+            >Fattah</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main
+      id="top"
+      class="relative min-h-screen flex flex-col items-center justify-center px-6 text-center pt-24 pb-16"
+    >
+      <!-- vertical year label -->
+      <span
+        class="hidden md:block vertical-text absolute left-8 top-1/2 -translate-y-1/2 text-xs tracking-[0.3em] text-muted"
+        >2026</span
+      >
+
+      <!-- vertical social icons -->
+      <div
+        class="hidden md:flex flex-col items-center gap-5 absolute right-8 top-1/2 -translate-y-1/2 text-muted"
+      >
+        <a
+          href="#"
+          aria-label="GitHub"
+          class="hover:text-white transition-colors"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.48 2 2 6.58 2 12.26c0 4.54 2.87 8.39 6.84 9.75.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.32 9.32 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .28.18.6.69.5A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"
+            />
+          </svg>
+        </a>
+        <a
+          href="#"
+          aria-label="LinkedIn"
+          class="hover:text-white transition-colors"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"
+            />
+          </svg>
+        </a>
+        <a
+          href="#"
+          aria-label="Instagram"
+          class="hover:text-white transition-colors"
+        >
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.62c-3.15 0-3.5.01-4.73.07-.97.04-1.5.21-1.85.34-.46.18-.79.4-1.14.75-.35.35-.56.68-.75 1.14-.13.35-.3.88-.34 1.85-.06 1.23-.07 1.58-.07 4.73s.01 3.5.07 4.73c.04.97.21 1.5.34 1.85.18.46.4.79.75 1.14.35.35.68.56 1.14.75.35.13.88.3 1.85.34 1.23.06 1.58.07 4.73.07s3.5-.01 4.73-.07c.97-.04 1.5-.21 1.85-.34.46-.18.79-.4 1.14-.75.35-.35.56-.68.75-1.14.13-.35.3-.88.34-1.85.06-1.23.07-1.58.07-4.73s-.01-3.5-.07-4.73c-.04-.97-.21-1.5-.34-1.85a3.06 3.06 0 0 0-.75-1.14 3.06 3.06 0 0 0-1.14-.75c-.35-.13-.88-.3-1.85-.34-1.23-.06-1.58-.07-4.73-.07zm0 4.38a3.84 3.84 0 1 1 0 7.68 3.84 3.84 0 0 1 0-7.68zm0 1.62a2.22 2.22 0 1 0 0 4.44 2.22 2.22 0 0 0 0-4.44zm4.89-1.8a.9.9 0 1 1-1.8 0 .9.9 0 0 1 1.8 0z"
+            />
+          </svg>
+        </a>
+      </div>
+
+      <!-- giant faded background word -->
+      <span
+        class="absolute font-display font-extrabold text-[20vw] leading-none text-white/5 select-none pointer-events-none whitespace-nowrap"
+        >PORTOFOLIO</span
+      >
+
+      <!-- central visual -->
+      <div class="relative float-el mb-10">
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-accent via-accent2 to-orange-400 rounded-full blur-[90px] opacity-40 scale-90"
+        ></div>
+        <!-- Ganti src di bawah dengan file gambar elemen tengah yang sudah kamu siapkan -->
+        <img
+          src="assets/This_Changed_My_Life_As_Programmer-removebg-preview.png"
+          alt="Elemen visual utama"
+          class="relative w-52 h-52 sm:w-72 sm:h-72 md:w-80 md:h-80 object-contain drop-shadow-2xl"
+        />
+      </div>
+
+      <!-- headline -->
+      <h1
+        class="relative font-display font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight max-w-3xl"
+      >
+        Portofolio Kelas Pemrograman Web
+      </h1>
+      <p class="relative mt-5 text-muted text-base md:text-lg max-w-md">
+        Dua sudut pandang, satu semangat belajar. Pilih portofolio yang ingin
+        kamu jelajahi.
+      </p>
+
+      <!-- CTA -->
+      <div
+        id="pilih"
+        class="relative mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+      >
         <a
           href="fadhlan.html"
-          class="w-64 py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-2xl transition-all shadow-lg shadow-blue-500/20 text-center"
+          class="w-64 py-4 rounded-full font-semibold text-sm bg-gradient-to-r from-accent to-accent2 text-black shadow-lg shadow-accent/30 hover:scale-[1.03] transition-transform text-center"
         >
           Fadhlan Ilhami
         </a>
-
-        <!-- Tombol ke Portofolio Fatah (Ukuran disamakan w-64 text-center) -->
         <a
           href="fatah.html"
-          class="w-64 py-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-2xl transition-all shadow-lg border border-slate-700 text-center"
+          class="w-64 py-4 rounded-full font-semibold text-sm bg-panel/70 backdrop-blur-md border border-panelBorder text-white hover:border-accent/60 transition-colors text-center"
         >
-          Muhammad Fattahurrizky
+          Muhammad Fattahurriky
         </a>
       </div>
-    </div>
+    </main>
+
+    <footer class="relative text-center pb-8 text-xs text-muted/70">
+      &copy; 2026 &mdash; Tugas Pemrograman Web
+    </footer>
   </body>
 </html>
