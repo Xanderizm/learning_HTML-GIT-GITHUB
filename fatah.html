@@ -1,105 +1,390 @@
-<!doctype html>
-<html lang="id" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portofolio - Muhammad Fattahurrizky</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-zinc-950 text-zinc-100 font-sans antialiased">
-    <!-- Nav Kembali -->
-    <header
-      class="fixed top-0 left-0 w-full z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/80"
-    >
-      <div
-        class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between"
-      >
-        <a
-          href="index.html"
-          class="flex items-center gap-2 text-zinc-400 hover:text-white transition-colors text-sm font-medium"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M10 19l-7-7m0 0l7-7m-7 7h18"
-            />
-          </svg>
-          Kembali ke Beranda
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio pribadi - ganti deskripsi ini dengan data kamu.">
+    <title>Muhammad Fattahurrizky | Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- =========================================================
+         NAVBAR
+         GANTI: nama, nomor telepon, dan menu jika diperlukan.
+    ========================================================== -->
+    <header class="navbar">
+        <a href="#home" class="logo">PORT<span>FOLIO</span></a>
+
+        <nav class="nav-menu" id="navMenu">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#resume" class="nav-link">Resume</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+        </nav>
+
+        <!-- GANTI nomor telepon -->
+        <a href="tel:+6285811469477" class="nav-phone">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            +62 858-1146-9477
         </a>
-        <span
-          class="text-xs font-semibold uppercase tracking-widest text-emerald-400"
-          >Fattahurrizky.space</span
-        >
-      </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
     </header>
 
-    <!-- Hero Section -->
-    <section
-      class="pt-32 pb-16 px-6 max-w-5xl mx-auto flex flex-col md:flex-row-reverse items-center gap-10"
-    >
-      <div
-        class="w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden border-2 border-emerald-500/40 shadow-2xl shrink-0"
-      >
-        <!-- Ganti dengan nama file foto Fatah / gunakan foto yang sama -->
-        <img
-          src="assets/fatah.jpeg"
-          alt="Muhammad Fattahurrizky"
-          class="w-full h-full object-cover"
-        />
-      </div>
-      <div class="text-center md:text-left space-y-3">
-        <span
-          class="inline-block px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded-full text-xs font-bold tracking-wider uppercase border border-emerald-500/20"
-        >
-          Fullstack Developer
-        </span>
-        <h1 class="text-4xl font-extrabold tracking-tight">
-          Muhammad Fattahurrizky
-        </h1>
-        <p class="text-zinc-400 text-sm md:text-base leading-relaxed max-w-lg">
-          Berdedikasi dalam membangun aplikasi web berperforma tinggi, mengelola
-          struktur data yang efisien, serta solusi pemrograman end-to-end.
-        </p>
-      </div>
-    </section>
+    <main>
 
-    <!-- Content / Skills -->
-    <section class="py-12 px-6 max-w-5xl mx-auto border-t border-zinc-900">
-      <h2 class="text-xl font-bold mb-6 text-zinc-200">Keahlian Teknis</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        <div class="p-4 bg-zinc-900/60 rounded-xl border border-zinc-800">
-          <h3 class="font-semibold text-sm text-emerald-300">
-            Backend Systems
-          </h3>
-          <p class="text-xs text-zinc-400 mt-1">
-            Node.js, Express, API Integration
-          </p>
-        </div>
-        <div class="p-4 bg-zinc-900/60 rounded-xl border border-zinc-800">
-          <h3 class="font-semibold text-sm text-emerald-300">
-            Database & Tools
-          </h3>
-          <p class="text-xs text-zinc-400 mt-1">JSON, Structured Data, Git</p>
-        </div>
-        <div class="p-4 bg-zinc-900/60 rounded-xl border border-zinc-800">
-          <h3 class="font-semibold text-sm text-emerald-300">Web Essentials</h3>
-          <p class="text-xs text-zinc-400 mt-1">JavaScript, HTML5, Tailwind</p>
-        </div>
-      </div>
-    </section>
+        <!-- =====================================================
+             HOME / HERO
+             GANTI nama, profesi, foto hero, sosial media.
+        ====================================================== -->
+        <section class="section hero" id="home">
+            <div class="hero-overlay"></div>
 
-    <footer
-      class="py-10 text-center text-xs text-zinc-600 border-t border-zinc-900"
-    >
-      &copy; 2026 Muhammad Fattahurrizky. All rights reserved.
+            <!-- Foto utama:
+                 Letakkan foto kamu di assets/hero.jpg
+                 atau ganti nama file di style.css -->
+            <div class="hero-content container">
+                <div class="hero-text reveal">
+                    <p class="eyebrow">HELLO, I'M</p>
+
+                    <!-- GANTI NAMA -->
+                    <h1>
+                        <span>MUHAMMAD</span>
+                        FATTAHURRIZKY
+                    </h1>
+
+                    <!-- GANTI PROFESI -->
+                    <p class="hero-role">Informatics Student &amp; Web Developer</p>
+
+                    <div class="hero-buttons">
+                        <a href="#resume" class="btn btn-outline">Resume</a>
+                        <a href="#portfolio" class="btn btn-outline">Portfolio</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GANTI LINK SOSIAL MEDIA -->
+            <div class="socials">
+                <a href="https://behance.net/" target="_blank" rel="noopener" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+                <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+
+            <a href="#about" class="scroll-down" aria-label="Scroll ke About">
+                <span></span>
+            </a>
+
+            <button class="fullscreen-btn" data-fullscreen aria-label="Fullscreen">
+                <i class="fa-solid fa-expand"></i>
+            </button>
+        </section>
+
+
+        <!-- =====================================================
+             ABOUT
+             GANTI foto assets/profile.jpg dan isi biodata.
+        ====================================================== -->
+        <section class="section about" id="about">
+
+    <div class="container about-grid">
+
+        <div class="about-text reveal">
+            <p class="section-label">ABOUT</p>
+
+            <a class="email" href="mailto:muhammadfattahurrizky@gmail.com">
+                muhammadfattahurrizky@gmail.com
+            </a>
+
+            <p class="description">
+                Saya adalah mahasiswa Informatika yang memiliki ketertarikan
+                pada pengembangan website, UI/UX, teknologi, dan dunia digital.
+                Saya senang mempelajari hal baru serta mengembangkan
+                kemampuan melalui berbagai proyek akademik maupun pribadi.
+            </p>
+
+            <div class="about-info">
+                <p>Indonesia, Banten</p>
+                <span>Lokasi saat ini</span>
+            </div>
+        </div>
+
+        <div class="about-photo reveal">
+            <img src="assets/fattah.png" alt="Foto Muhammad Fattahurrizky">
+        </div>
+
+    </div>
+
+    <button class="fullscreen-btn" data-fullscreen aria-label="Fullscreen">
+        <i class="fa-solid fa-expand"></i>
+    </button>
+</section>
+
+            <button class="fullscreen-btn" data-fullscreen aria-label="Fullscreen">
+                <i class="fa-solid fa-expand"></i>
+            </button>
+        </section>
+
+
+        <!-- =====================================================
+             RESUME
+             GANTI skill, pengalaman, pendidikan, bahasa, dll.
+        ====================================================== -->
+        <section class="section resume" id="resume">
+            <div class="container resume-grid">
+
+                <!-- KOLOM 1 -->
+                <div class="resume-column reveal">
+                    <div class="resume-block">
+                        <h3>SOFTWARE SKILLS</h3>  
+
+                        <!-- Skill -->
+                        <div class="skill">
+                            <div class="skill-head">
+                                <span>HTML</span><span>85%</span>
+                            </div>
+                            <div class="skill-bar"><span style="width:85%"></span></div>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-head">
+                                <span>CSS</span><span>80%</span>
+                            </div>
+                            <div class="skill-bar"><span style="width:80%"></span></div>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-head">
+                                <span>JavaScript</span><span>70%</span>
+                            </div>
+                            <div class="skill-bar"><span style="width:70%"></span></div>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-head">
+                                <span>Python</span><span>70%</span>
+                            </div>
+                            <div class="skill-bar"><span style="width:70%"></span></div>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-head">
+                                <span>UI/UX</span><span>65%</span>
+                            </div>
+                            <div class="skill-bar"><span style="width:65%"></span></div>
+                        </div>
+                    </div>
+
+                    <div class="resume-block">
+                        <h3>LANGUAGES</h3>
+
+                        <div class="skill">
+                            <div class="skill-head">
+                                <span>Indonesia</span><span>100%</span>
+                            </div>
+                            <div class="skill-bar"><span style="width:100%"></span></div>
+                        </div>
+
+                        <div class="skill">
+                            <div class="skill-head">
+                                <span>English</span><span>70%</span>
+                            </div>
+                            <div class="skill-bar"><span style="width:70%"></span></div>
+                        </div>
+                    </div>
+
+                    <div class="resume-block">
+                        <h3>PERSONAL SKILLS</h3>
+                        <p class="plain-text">
+                            Creativity · Team Work · Communication · Problem Solving
+                        </p>
+                    </div>
+                </div>
+
+
+                <!-- KOLOM 2 -->
+                <div class="resume-column reveal">
+                    <div class="resume-block">
+                        <h3>EXPERIENCE</h3>
+
+                        <!-- Pengalaman 1 -->
+                        <article class="timeline-item">
+                            <div class="timeline-date">2026</div>
+                            <div>
+                                <h4>Web Development Project</h4>
+                                <p class="company">Personal / Academic Project</p>
+                                <p>
+                                    Mengembangkan website menggunakan HTML, CSS,
+                                    JavaScript dan teknologi web lainnya.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- Pengalaman 2 -->
+                        <article class="timeline-item">
+                            <div class="timeline-date">2025</div>
+                            <div>
+                                <h4>Informatics Student</h4>
+                                <p class="company">Universitas Sultan Ageng Tirtayasa</p>
+                                <p>
+                                    Mempelajari dasar pemrograman, struktur data,
+                                    pengembangan web, basis data dan sistem komputer.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- Tambahkan pengalaman lain dengan menyalin timeline-item -->
+                    </div>
+
+                    <div class="resume-block">
+                        <h3>EDUCATION</h3>
+
+                        <article class="education-item">
+                            <div class="edu-year">2025<br>— NOW</div>
+                            <div>
+                                <h4>S1 Informatika</h4>
+                                <p>Universitas Sultan Ageng Tirtayasa</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+
+                <!-- KOLOM 3 -->
+                <div class="resume-column reveal">
+                    <div class="resume-block">
+                        <h3>WHAT CAN I DO?</h3>
+                        <ul class="clean-list">
+                            <li>Website Development</li>
+                            <li>Responsive Web Design</li>
+                            <li>Landing Page</li>
+                            <li>UI Implementation</li>
+                            <li>Basic UI/UX Design</li>
+                        </ul>
+                    </div>
+
+                    <div class="resume-block">
+                        <h3>DESIGN SKILLS</h3>
+                        <p class="plain-text">
+                            Layout · Typography · Color · Visual Design · User Interface
+                        </p>
+                    </div>
+
+                    <div class="resume-block">
+                        <h3>HOBBIES &amp; INTERESTS</h3>
+
+                        <div class="hobbies">
+                            <div><i class="fa-solid fa-gamepad"></i><span>Gaming</span></div>
+                            <div><i class="fa-solid fa-camera"></i><span>Photography</span></div>
+                            <div><i class="fa-solid fa-code"></i><span>Coding</span></div>
+                            <div><i class="fa-solid fa-plane"></i><span>Travel</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="fullscreen-btn" data-fullscreen aria-label="Fullscreen">
+                <i class="fa-solid fa-expand"></i>
+            </button>
+        </section>
+
+
+        <!-- =====================================================
+             PORTFOLIO
+             GANTI judul, deskripsi, link, dan gambar proyek.
+        ====================================================== -->
+        <section class="section portfolio" id="portfolio">
+            <div class="container">
+                <div class="portfolio-heading reveal">
+                    <p class="section-label">PORTFOLIO</p>
+                    <h2>MY RECENT <span>PROJECTS</span></h2>
+                    <p>
+                        Beberapa proyek yang pernah saya kerjakan.
+                    </p>
+                </div>
+
+                <div class="portfolio-grid">
+
+                    <!-- PROJECT 1 -->
+                    <article class="project-card reveal">
+                        <div class="project-image">
+                            <img src="assets/Projek1.png" alt="Project 1">
+                            <div class="project-overlay">
+                                <a href="#" target="_blank" rel="noopener" aria-label="Lihat project">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <p>WEB DEVELOPMENT</p>
+                            <h3>Portofolio</h3>
+                            <span>HTML · CSS · JavaScript</span>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 2 -->
+                    <article class="project-card reveal">
+                        <div class="project-image">
+                            <img src="assets/project-2.jpg" alt="Project 2">
+                            <div class="project-overlay">
+                                <a href="#" target="_blank" rel="noopener" aria-label="Lihat project">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <p>UI / UX</p>
+                            <h3>Nama Project Kedua</h3>
+                            <span>Figma · UI Design</span>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 3 -->
+                    <article class="project-card reveal">
+                        <div class="project-image">
+                            <img src="assets/project-3.jpg" alt="Project 3">
+                            <div class="project-overlay">
+                                <a href="#" target="_blank" rel="noopener" aria-label="Lihat project">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <p>ACADEMIC PROJECT</p>
+                            <h3>Nama Project Ketiga</h3>
+                            <span>HTML · CSS · JavaScript</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+            <button class="fullscreen-btn" data-fullscreen aria-label="Fullscreen">
+                <i class="fa-solid fa-expand"></i>
+            </button>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="year"></span> muhammadfattahurrizky. All Rights Reserved.</p>
     </footer>
-  </body>
+
+    <script src="script.js"></script>
+</body>
 </html>
