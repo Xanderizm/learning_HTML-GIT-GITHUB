@@ -1,223 +1,543 @@
 <!doctype html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pilih Portofolio Developer</title>
-
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              bg: "#0a0612",
-              panel: "#150c24",
-              panelBorder: "#2a1c42",
-              accent: "#c084fc",
-              accent2: "#f472b6",
-              muted: "#a99bc4",
-            },
-            fontFamily: {
-              display: ["Syne", "sans-serif"],
-              body: ["Inter", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
-
+    <meta
+      name="description"
+      content="landing page portfolio dua kreator."
+    />
+    <title>Creative Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
     <style>
-      @keyframes floaty {
-        0%,
-        100% {
-          transform: translateY(0px);
+      :root {
+        --ink: #171717;
+        --muted: #666;
+        --lime: #b8ff3d;
+        --paper: #fff;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+      body {
+        font-family: "Space Grotesk", Arial, sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      .page {
+        width: 100%;
+        height: 100svh;
+        min-height: 520px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      .navbar {
+        flex: 0 0 auto;
+        height: 72px;
+        display: flex;
+        align-items: center;
+        padding: 0 clamp(22px, 5vw, 70px);
+      }
+      .nav-inner {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 17px;
+        font-weight: 700;
+      }
+      .brand-star {
+        font-size: 18px;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: clamp(14px, 2.4vw, 34px);
+      }
+      .nav-links a {
+        font-size: 11px;
+        font-weight: 500;
+        transition: 0.2s ease;
+      }
+      .nav-links a:hover {
+        transform: translateY(-1px);
+      }
+      .nav-ghost {
+        border: 1px solid var(--ink);
+        border-radius: 8px;
+        padding: 10px 16px;
+      }
+      .hero {
+        flex: 1 1 auto;
+        min-height: 0;
+        display: flex;
+        align-items: center;
+        padding: 10px clamp(22px, 5vw, 70px) 0;
+      }
+      .hero-inner {
+        width: 100%;
+        max-width: 1280px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(330px, 0.88fr) minmax(420px, 1.12fr);
+        align-items: center;
+        gap: clamp(25px, 5vw, 70px);
+      }
+      .copy {
+        padding-bottom: 15px;
+      }
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 12px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1.3px;
+      }
+      .eyebrow i {
+        display: block;
+        width: 24px;
+        height: 5px;
+        border-radius: 99px;
+        background: var(--lime);
+      }
+      h1 {
+        margin: 0;
+        max-width: 560px;
+        font-size: clamp(39px, 5.1vw, 70px);
+        line-height: 0.97;
+        letter-spacing: -3px;
+        font-weight: 600;
+      }
+      .lead {
+        max-width: 450px;
+        margin: 20px 0 24px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.65;
+      }
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+      }
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        border-radius: 8px;
+        padding: 12px 15px;
+        font-size: 11px;
+        font-weight: 600;
+        border: 1px solid var(--ink);
+        transition: 0.2s ease;
+      }
+      .cta:hover {
+        transform: translateY(-2px);
+      }
+      .cta-main {
+        background: var(--ink);
+        color: #fff;
+      }
+      .cta-second {
+        background: #fff;
+      }
+      .cta-github {
+        background: var(--lime);
+      }
+      .art {
+        position: relative;
+        width: 100%;
+        height: min(52vh, 430px);
+        min-height: 290px;
+      }
+      .orbit {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: min(39vw, 520px);
+        height: min(17vw, 210px);
+        min-width: 350px;
+        min-height: 145px;
+        border: 1.5px solid #222;
+        border-radius: 50%;
+        transform: translate(-50%, -50%) rotate(-14deg);
+      }
+      .orbit.o2 {
+        transform: translate(-50%, -50%) rotate(18deg) scale(0.97);
+      }
+      .orbit.o3 {
+        transform: translate(-50%, -50%) rotate(55deg) scale(0.84);
+      }
+      .megaphone {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 280px;
+        height: 140px;
+        transform: translate(-47%, -50%) rotate(28deg);
+      }
+      .speaker {
+        position: absolute;
+        right: 0;
+        top: 5px;
+        width: 180px;
+        height: 126px;
+        border: 2px solid var(--ink);
+        border-radius: 20% 75% 75% 20%;
+        background: #fff;
+        transform: skewX(-10deg);
+      }
+      .speaker:after {
+        content: "";
+        position: absolute;
+        inset: 21px 20px 21px 29px;
+        border: 2px solid var(--ink);
+        border-radius: 50%;
+        background: var(--lime);
+      }
+      .body {
+        position: absolute;
+        left: 77px;
+        top: 35px;
+        width: 110px;
+        height: 67px;
+        background: var(--lime);
+        border: 2px solid var(--ink);
+        border-right: 0;
+        transform: skewY(-3deg);
+      }
+      .handle {
+        position: absolute;
+        left: 80px;
+        bottom: -40px;
+        width: 31px;
+        height: 57px;
+        border: 2px solid var(--ink);
+        border-top: 0;
+        transform: skewX(-8deg);
+      }
+      .dot {
+        position: absolute;
+        border-radius: 50%;
+        background: var(--lime);
+      }
+      .d1 {
+        width: 13px;
+        height: 13px;
+        left: 28%;
+        top: 27%;
+      }
+      .d2 {
+        width: 9px;
+        height: 9px;
+        right: 20%;
+        bottom: 22%;
+      }
+      .d3 {
+        width: 14px;
+        height: 14px;
+        left: 36%;
+        top: 13%;
+        background: var(--ink);
+      }
+      .icon {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        display: grid;
+        place-items: center;
+        border: 2px solid var(--ink);
+        border-radius: 50%;
+        background: #fff;
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .heart {
+        right: 10%;
+        top: 12%;
+      }
+      .share {
+        right: 2%;
+        top: 25%;
+        background: var(--lime);
+      }
+      .play {
+        right: 3%;
+        top: 43%;
+      }
+      .pin {
+        right: 8%;
+        top: 61%;
+        background: var(--lime);
+      }
+      .spark {
+        position: absolute;
+        font-size: 36px;
+      }
+      .s1 {
+        left: 11%;
+        bottom: 18%;
+      }
+      .s2 {
+        left: 33%;
+        bottom: 5%;
+        font-size: 20px;
+      }
+      .logos {
+        flex: 0 0 auto;
+        width: 100%;
+        padding: 8px clamp(22px, 5vw, 70px) 24px;
+      }
+      .logo-inner {
+        width: 100%;
+        max-width: 1280px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+        color: #333;
+        font-weight: 700;
+        font-size: clamp(12px, 1.35vw, 17px);
+        opacity: 0.88;
+      }
+      .logo-inner span:nth-child(2) {
+        font-style: italic;
+        font-family: cursive;
+      }
+      @media (max-width: 900px) {
+        .page {
+          min-height: 560px;
         }
-        50% {
-          transform: translateY(-14px);
+        .navbar {
+          height: 64px;
+        }
+        .nav-links a:not(.nav-ghost) {
+          display: none;
+        }
+        .hero {
+          padding-top: 0;
+        }
+        .hero-inner {
+          grid-template-columns: 1fr 1fr;
+          gap: 18px;
+        }
+        h1 {
+          font-size: clamp(34px, 6vw, 54px);
+        }
+        .art {
+          height: 330px;
+        }
+        .megaphone {
+          transform: translate(-47%, -50%) rotate(28deg) scale(0.78);
+        }
+        .orbit {
+          transform: translate(-50%, -50%) rotate(-14deg) scale(0.78);
+        }
+        .orbit.o2 {
+          transform: translate(-50%, -50%) rotate(18deg) scale(0.76);
+        }
+        .orbit.o3 {
+          transform: translate(-50%, -50%) rotate(55deg) scale(0.68);
         }
       }
-      .float-el {
-        animation: floaty 6s ease-in-out infinite;
+      @media (max-width: 650px) {
+        .page {
+          min-height: 600px;
+        }
+        .navbar {
+          height: 58px;
+          padding: 0 18px;
+        }
+        .nav-ghost {
+          padding: 8px 12px;
+        }
+        .hero {
+          padding: 0 18px;
+        }
+        .hero-inner {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 0;
+        }
+        .copy {
+          width: 100%;
+          padding: 0;
+          text-align: left;
+        }
+        h1 {
+          max-width: 520px;
+          font-size: clamp(34px, 10vw, 52px);
+          letter-spacing: -2px;
+        }
+        .lead {
+          margin: 14px 0 17px;
+          font-size: 11px;
+          max-width: 520px;
+        }
+        .cta-row {
+          gap: 7px;
+        }
+        .cta {
+          padding: 10px 12px;
+          font-size: 10px;
+        }
+        .art {
+          width: 100%;
+          height: 220px;
+          min-height: 180px;
+          margin-top: -4px;
+        }
+        .megaphone {
+          transform: translate(-47%, -50%) rotate(28deg) scale(0.54);
+        }
+        .orbit {
+          transform: translate(-50%, -50%) rotate(-14deg) scale(0.56);
+        }
+        .orbit.o2 {
+          transform: translate(-50%, -50%) rotate(18deg) scale(0.54);
+        }
+        .orbit.o3 {
+          transform: translate(-50%, -50%) rotate(55deg) scale(0.49);
+        }
+        .logos {
+          padding: 3px 18px 15px;
+        }
+        .logo-inner {
+          justify-content: center;
+          gap: 13px;
+          flex-wrap: wrap;
+          font-size: 10px;
+        }
       }
-      .vertical-text {
-        writing-mode: vertical-rl;
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .float-el {
-          animation: none;
+      @media (max-height: 650px) and (min-width: 651px) {
+        .navbar {
+          height: 58px;
+        }
+        .hero-inner {
+          transform: scale(0.88);
+          transform-origin: center;
+        }
+        .logos {
+          padding-bottom: 10px;
         }
       }
     </style>
   </head>
+  <body>
+    <div class="page">
+      <header class="navbar">
+        <div class="nav-inner">
+          <a class="brand" href="#" aria-label="WizardZ">
+            <span class="brand-star">★</span>
+            <span>Creative Duo</span>
+          </a>
+      </header>
 
-  <body class="bg-bg text-white font-body antialiased overflow-x-hidden">
-    <!-- Ambient background glow -->
-    <div class="fixed inset-0 pointer-events-none">
-      <div
-        class="absolute top-[-10%] left-[15%] w-[420px] h-[420px] bg-accent/25 rounded-full blur-[120px]"
-      ></div>
-      <div
-        class="absolute bottom-[-15%] right-[10%] w-[460px] h-[460px] bg-accent2/20 rounded-full blur-[130px]"
-      ></div>
-      <div
-        class="absolute top-[35%] right-[30%] w-[300px] h-[300px] bg-orange-400/10 rounded-full blur-[110px]"
-      ></div>
-    </div>
+      <main class="hero" id="home">
+        <div class="hero-inner">
+          <section class="copy">
+            <p class="eyebrow"><i></i> WEB DEVELOPMENT DUO</p>
 
-    <!-- Navbar -->
-    <header class="fixed top-0 left-0 w-full z-50">
-      <div
-        class="max-w-6xl mx-auto px-6 md:px-10 h-20 flex items-center justify-between"
-      >
-        <span class="font-display font-bold text-lg tracking-tight"
-          >dev.folio</span
-        >
+            <h1>Kolaborasi Kode dan Desain Web Responsif</h1>
 
-        <nav
-          class="hidden md:flex items-center gap-8 text-sm text-muted font-medium"
-        >
-          <a href="#top" class="hover:text-white transition-colors">Beranda</a>
-          <a href="#pilih" class="hover:text-white transition-colors"
-            >Portofolio</a
-          >
-          <a
-            href="https://github.com/"
-            target="_blank"
-            rel="noopener"
-            class="hover:text-white transition-colors"
-            >GitHub</a
-          >
-        </nav>
+            <p class="lead">
+              Kolaborasi Kami berdua dalam mewujudkan ide visual dan 
+              struktur kode menjadi antarmuka web portofolio yang interaktif.
+            </p>
 
-        <div
-          class="hidden sm:flex items-center gap-1 bg-panel/70 backdrop-blur-md border border-panelBorder rounded-full p-1"
-        >
-          <a
-            href="fadhlan.html"
-            target="_self"
-            class="px-4 py-2 text-xs font-semibold rounded-full text-muted hover:text-white transition-colors"
-            >Fadhlan</a
-          >
-          <a
-            href="fatah.html"
-            class="px-4 py-2 text-xs font-semibold rounded-full bg-gradient-to-r from-accent to-accent2 text-black"
-            >Fattah</a
-          >
+            <!-- HANYA 3 CTA -->
+            <div class="cta-row" id="portfolio">
+              <!-- Ganti 3 URL berikut -->
+              <a
+                class="cta cta-main"
+                href="fadhlan.html"
+                target="_blank"
+                rel="noopener"
+              >
+                Fadhlan Ilhami ↗
+              </a>
+
+              <a
+                class="cta cta-second"
+                href="fatah.html"
+                target="_blank"
+                rel="noopener"
+              >
+                M. Fattahurrizky ↗
+              </a>
+
+              <a
+                class="cta cta-github"
+                href="https://github.com/Xanderizm/learning_HTML-GIT-GITHUB"
+                target="_blank"
+                rel="noopener"
+              >
+                GitHub ↗
+              </a>
+            </div>
+          </section>
+
+          <section class="art" aria-label="Ilustrasi digital">
+            <div class="orbit"></div>
+            <div class="orbit o2"></div>
+            <div class="orbit o3"></div>
+
+            <div class="megaphone">
+              <div class="handle"></div>
+              <div class="speaker"></div>
+              <div class="body"></div>
+            </div>
+
+            <span class="dot d1"></span>
+            <span class="dot d2"></span>
+            <span class="dot d3"></span>
+
+            <span class="icon heart">♥</span>
+            <span class="icon share">↗</span>
+            <span class="icon play">▶</span>
+            <span class="icon pin">●</span>
+
+            <span class="spark s1">✦</span>
+            <span class="spark s2">★</span>
+          </section>
         </div>
-      </div>
-    </header>
+      </main>
 
-    <!-- Hero -->
-    <main
-      id="top"
-      class="relative min-h-screen flex flex-col items-center justify-center px-6 text-center pt-24 pb-16"
-    >
-      <!-- vertical year label -->
-      <span
-        class="hidden md:block vertical-text absolute left-8 top-1/2 -translate-y-1/2 text-xs tracking-[0.3em] text-muted"
-        >2026</span
-      >
-
-      <!-- vertical social icons -->
-      <div
-        class="hidden md:flex flex-col items-center gap-5 absolute right-8 top-1/2 -translate-y-1/2 text-muted"
-      >
-        <a
-          href="#"
-          aria-label="GitHub"
-          class="hover:text-white transition-colors"
-        >
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12 2C6.48 2 2 6.58 2 12.26c0 4.54 2.87 8.39 6.84 9.75.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.04 1.03-2.76-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.32 9.32 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .28.18.6.69.5A10.02 10.02 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"
-            />
-          </svg>
-        </a>
-        <a
-          href="#"
-          aria-label="LinkedIn"
-          class="hover:text-white transition-colors"
-        >
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"
-            />
-          </svg>
-        </a>
-        <a
-          href="#"
-          aria-label="Instagram"
-          class="hover:text-white transition-colors"
-        >
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.62c-3.15 0-3.5.01-4.73.07-.97.04-1.5.21-1.85.34-.46.18-.79.4-1.14.75-.35.35-.56.68-.75 1.14-.13.35-.3.88-.34 1.85-.06 1.23-.07 1.58-.07 4.73s.01 3.5.07 4.73c.04.97.21 1.5.34 1.85.18.46.4.79.75 1.14.35.35.68.56 1.14.75.35.13.88.3 1.85.34 1.23.06 1.58.07 4.73.07s3.5-.01 4.73-.07c.97-.04 1.5-.21 1.85-.34.46-.18.79-.4 1.14-.75.35-.35.56-.68.75-1.14.13-.35.3-.88.34-1.85.06-1.23.07-1.58.07-4.73s-.01-3.5-.07-4.73c-.04-.97-.21-1.5-.34-1.85a3.06 3.06 0 0 0-.75-1.14 3.06 3.06 0 0 0-1.14-.75c-.35-.13-.88-.3-1.85-.34-1.23-.06-1.58-.07-4.73-.07zm0 4.38a3.84 3.84 0 1 1 0 7.68 3.84 3.84 0 0 1 0-7.68zm0 1.62a2.22 2.22 0 1 0 0 4.44 2.22 2.22 0 0 0 0-4.44zm4.89-1.8a.9.9 0 1 1-1.8 0 .9.9 0 0 1 1.8 0z"
-            />
-          </svg>
-        </a>
-      </div>
-
-      <!-- giant faded background word -->
-      <span
-        class="absolute font-display font-extrabold text-[20vw] leading-none text-white/5 select-none pointer-events-none whitespace-nowrap"
-        >PORTOFOLIO</span
-      >
-
-      <!-- central visual -->
-      <div class="relative float-el mb-10">
-        <div
-          class="absolute inset-0 bg-gradient-to-br from-accent via-accent2 to-orange-400 rounded-full blur-[90px] opacity-40 scale-90"
-        ></div>
-        <!-- Ganti src di bawah dengan file gambar elemen tengah yang sudah kamu siapkan -->
-        <img
-          src="assets/This_Changed_My_Life_As_Programmer-removebg-preview.png"
-          alt="Elemen visual utama"
-          class="relative w-52 h-52 sm:w-72 sm:h-72 md:w-80 md:h-80 object-contain drop-shadow-2xl"
-        />
-      </div>
-
-      <!-- headline -->
-      <h1
-        class="relative font-display font-extrabold text-4xl sm:text-5xl md:text-6xl tracking-tight max-w-3xl"
-      >
-        Portofolio Kelas Pemrograman Web
-      </h1>
-      <p class="relative mt-5 text-muted text-base md:text-lg max-w-md">
-        Dua sudut pandang, satu semangat belajar. Pilih portofolio yang ingin
-        kamu jelajahi.
-      </p>
-
-      <!-- CTA -->
-      <div
-        id="pilih"
-        class="relative mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
-      >
-        <a
-          href="fadhlan.html"
-          class="w-64 py-4 rounded-full font-semibold text-sm bg-gradient-to-r from-accent to-accent2 text-black shadow-lg shadow-accent/30 hover:scale-[1.03] transition-transform text-center"
-        >
-          Fadhlan Ilhami
-        </a>
-        <a
-          href="fatah.html"
-          class="w-64 py-4 rounded-full font-semibold text-sm bg-panel/70 backdrop-blur-md border border-panelBorder text-white hover:border-accent/60 transition-colors text-center"
-        >
-          Muhammad Fattahurriky
-        </a>
-      </div>
-    </main>
-
-    <footer class="relative text-center pb-8 text-xs text-muted/70">
-      &copy; 2026 &mdash; Tugas Pemrograman Web
-    </footer>
+      <footer class="logos">
+        <div class="logo-inner">
+          <span>HTML & CSS</span>
+          <span>Bootstrap</span>
+          <span>Pemrograman Web</span>
+          <span>Git & Github</span>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
